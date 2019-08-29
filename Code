@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class test {
+    public void sort(){
+        System.out.println("Enter the size of array : ");
+        Scanner obj_scanner = new Scanner(System.in);
+        int len = obj_scanner.nextInt();
+        int arr[] = new int[len];
+        System.out.println("Enter the elements : ");
+        for( int i = 0; i<len; i++){
+            arr[i] = obj_scanner.nextInt();
+        }
+        System.out.println("Unsorted array is : ");
+        for(int i = 0; i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        int temp;
+        boolean sort = false;
+        while (!sort) {
+            sort = true;
+            for (int i = 0; i < (arr.length)-1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    sort = false;
+                }
+            }
+        }
+        System.out.println("Sorted Array is : ");
+        for(int i=0; i<arr.length; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    
+    public static void main(String[] args) {
+        test obj_test = new test();
+        obj_test.sort();
+    }
+}
